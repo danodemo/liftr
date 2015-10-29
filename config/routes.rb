@@ -8,33 +8,33 @@ Rails.application.routes.draw do
 
 #POSTS CONTROLLER
   get "posts", to: "posts#index"
-  get "posts/new", to: "posts#new"
+  get "posts/new", to: "posts#new", as: "post_new"
   post "posts", to: "posts#create"
-  get "posts/:id", to: "posts#show"
+  get "posts/:id", to: "posts#show", as: "post"
   delete "posts/:id", to: "posts#destroy"
-  get "posts/:id/edit", to: "posts#edit"
+  get "posts/:id/edit", to: "posts#edit", as: "edit"
   post "posts/:id", to: "posts#update"
 
 
 #COMMENTS CONTROLLER
-  get "posts/comments/new", to: "comments#new"
+  get "posts/comments/new", to: "comments#new", as: "comment_new"
   post "posts/comments/:id", to: "comments#create"
-  get "posts/commments/:id/edit" to: "comments#edit"
+  get "posts/commments/:id/edit", to: "comments#edit", as: "comment_edit"
   put "posts/comments/:id", to: "comments#update"
   delete "posts/comments/:id", to: "comments#destroy"
-  get "posts/comments/:id", to: "comments#show"
+  get "posts/comments/:id", to: "comments#show", as: "comment"
 
 #USERS CONTROLLER
-  get "users/:id/posts", to: "users#myposts"
-  get "users/:id/comments", to: "users#mycomments"
+  get "users/:id/posts", to: "users#myposts", as: "myposts"
+  get "users/:id/comments", to: "users#mycomments", as: "mycomments"
 
 #SESSION CONTROLLER
-  get "login", to: "sessions#new"
+  get "login", to: "sessions#new", as: "login"
   post "login", to: "session#create"
   delete "login", to: "sessions#destroy"
 
 #REGISTRATION CONTROLLER
-  get "signup", to: "registrations#new"
+  get "signup", to: "registrations#new", as: "signup"
   post "signup", to: "registrations#create"
 
   # Example of regular route:
