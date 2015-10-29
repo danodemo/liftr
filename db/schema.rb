@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20151029201059) do
     t.integer  "user_id",    null: false
     t.integer  "post_id",    null: false
     t.text     "body",       null: false
-    t.datetime "updated_at", null: false
     t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20151029201059) do
     t.string   "email",      null: false
     t.string   "password",   null: false
     t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
