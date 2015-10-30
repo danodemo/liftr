@@ -2,19 +2,16 @@
 
 <%= form_tag(posts_path) do %>
 
-<div class="post-title">
-  <%= label_tag "Title: " %>
-  <%= text_field_tag :title, @post.title %>
-</div>
+  <div class="post-title">
+    <%= label_tag "Title: " %>
+    <%= text_field_tag :title, @post.title %>
+  </div>
 
-<div class="post-link">
-  <%= label_tag "Link Url: " %>
-  <%= text_field_tag :link, @post.link %>
-</div>
-
-<!-- <div class="post-content">
-  <%= label_tag "Add Some Details: "
-  <%= text_area_tag :content, @post.body %>
-</div> -->
+  <div class="post-link">
+    <%= label_tag "Link Url: " %>
+    <%= text_field_tag :link, @post.link %>
+  </div>
 
 <%= submit_tag "Publish Post" %>
+
+<% end %>

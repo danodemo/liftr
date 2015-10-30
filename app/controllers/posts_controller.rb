@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   def create
     post = current_user.posts.create(title: params[:title],
                                      link: params[:link])
-    redirect_to post_path(post)
+    redirect_to posts_path
   end
 
   def show
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = find(params[:id])
+    @post = Post.find(params[:id])
     render :edit
   end
 

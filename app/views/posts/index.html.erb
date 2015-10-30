@@ -7,11 +7,15 @@
           <a href="<%= post.link %>"><%= post.title %></a>
           <ul class="options">
             <li class="comment-count">
-              <%= link_to "#{post.comments.count} Comments", comments_show_path %>
+              <% if post.comments.find_by(post_id: post.id) %>
+                <%= link_to "#{post.comments.find_by(post_id: post.id).count} Comments", comments_show_path %>
+              <% else %>
+              "0 Comments"
+              <% end %>
             </li>
             <li class=>
-              <% if current_user.posts.find(post.id) %>
-                <%= link_to "Edit Post", edit_path %>
+              <% if current_user.posts.find_by(id: post.id) %>
+                <%= link_to "Edit Post", edit_path(post) %>
               <% end %>
             <li class="time-submitted">
               <span>
@@ -25,5 +29,5 @@
 
 <div class="posts-nav">
   <%= paginate @posts %>
-  <%= link_to "Add a new Post!", posts_new_path %>
+  <%= link_to "Add a new Post!", post_new_path %>
 </div>
