@@ -13,10 +13,6 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
-  def show
-    render :show
-  end
-
   def edit
     @post = Post.find(params[:id])
     render :edit
