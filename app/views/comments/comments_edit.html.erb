@@ -1,0 +1,14 @@
+<h1>Edit Comment</h1>
+
+<%= form_tag(comment_path(@comment), method: :put) do %>
+  
+  <div class="comment_body"> 
+  <%=label_tag "Body: " %>
+  <%= text_field_tag :body, @comment.body %>
+  </div>
+
+  <%= submit_tag "Edit Comment" %>
+
+  <% end %>
+
+  <%= link_to "Cancel Edit", :back %>

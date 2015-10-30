@@ -7,22 +7,22 @@ Rails.application.routes.draw do
   root "users#welcome"
 
 #POSTS CONTROLLER
-  get "posts", to: "posts#index"
+  get "posts", to: "posts#index", as: "posts"
   get "posts/new", to: "posts#new", as: "post_new"
   post "posts", to: "posts#create"
-  get "posts/:id", to: "posts#show", as: "post"
   delete "posts/:id", to: "posts#destroy"
   get "posts/:id/edit", to: "posts#edit", as: "edit"
-  post "posts/:id", to: "posts#update"
+  put "posts/:id", to: "posts#update"
 
 
 #COMMENTS CONTROLLER
-  get "posts/comments/new", to: "comments#new", as: "comment_new"
-  post "posts/comments/:id", to: "comments#create"
-  get "posts/commments/:id/edit", to: "comments#edit", as: "comment_edit"
-  put "posts/comments/:id", to: "comments#update"
-  delete "posts/comments/:id", to: "comments#destroy"
-  get "posts/comments/:id", to: "comments#show", as: "comment"
+  # get "posts/comments/new", to: "comments#new", as: "comment_new"
+  get "posts/:id/comments", to: "comments#index", as: "comments"
+  post "posts/:id/comments", to: "comments#create"
+  get "commments/:id/edit", to: "comments#edit", as: "comment_edit"
+  put "comments/:id", to: "comments#update"
+  delete "comments/:id", to: "comments#destroy"
+  # get "comments/:id", to: "comments#show", as: "comment"
 
 #USERS CONTROLLER
   get "users/:id/posts", to: "users#myposts", as: "myposts"
