@@ -1,0 +1,17 @@
+<h1>Edit Your Post</h1>
+
+<%= form_tag(posts_path) do %>
+
+  <div class="post-title">
+    <%= label_tag "Title: " %>
+    <%= text_field_tag :title, @post.title %>
+  </div>
+
+  <div class="post-link">
+    <%= label_tag "Link Url: " %>
+    <%= text_field_tag :link, @post.link %>
+  </div>
+
+<%= submit_tag "Publish Post" %>
+
+<% end %>
