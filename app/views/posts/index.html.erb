@@ -1,0 +1,29 @@
+<h1>Liftr</h1>
+<h2>The Back Page of the Internet</h2>
+
+<ul class="posts">
+    <% @posts.each do |post| %>
+        <li class="post">
+          <a href="<%= post.link %>"><%= post.title %></a>
+          <ul class="options">
+            <li class="comment-count">
+              <%= link_to "#{post.comments.count} Comments", comments_show_path %>
+            </li>
+            <li class=>
+              <% if current_user.posts.find(post.id) %>
+                <%= link_to "Edit Post", edit_path %>
+              <% end %>
+            <li class="time-submitted">
+              <span>
+                Submitted <%= distance_of_time_in_words post.created_at, post.updated_at %>ago by <%= current_user.username %>
+              </span>
+            </li>
+          </ul>
+        </li>
+    <% end %>
+</ul>
+
+<div class="posts-nav">
+  <%= paginate @posts %>
+  <%= link_to "Add a new Post!", posts_new_path %>
+</div>
