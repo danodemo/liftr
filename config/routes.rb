@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post "posts", to: "posts#create"
   delete "posts/:id", to: "posts#destroy"
   get "posts/:id/edit", to: "posts#edit", as: "edit"
-  put "posts/:id", to: "posts#update"
+  put "posts/:id", to: "posts#update", as: "post"
 
 
 #COMMENTS CONTROLLER
