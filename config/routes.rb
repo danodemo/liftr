@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
 #SESSION CONTROLLER
   get "login", to: "sessions#new", as: "login"
-  post "login", to: "session#create"
+  post "login", to: "sessions#create"
   delete "login", to: "sessions#destroy"
 
 #REGISTRATION CONTROLLER
