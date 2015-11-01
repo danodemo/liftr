@@ -1,44 +1,59 @@
 <div class="postView">
-  <div class="postInfo">
-    <a href="<%= @post.link %>"><%= @post.title %></a>
-    <div class="userblock">
-      <% user = User.find_by(id: @post.user_id) %>
-        <span>
-          Submitted <%= distance_of_time_in_words @post.created_at, DateTime.now %> ago by <%= user.username %>
-        </span>
+  <ul>
+    <li class="post">
+     <div class="title"><a href="<%= @post.link %>" target="_blank"><%= @post.title %></a></div>
+        <% image = LinkThumbnailer.generate(@post.link) %>
+        
+     <div class="preview">
+        <a href="<%= @post.link %>"><img src="<%= image.images.first %>"/></a>
+     </div>
+     <div class="userinfo">
+       <% user = User.find_by(id: @post.user_id) %>
+       <span>
+         Submitted <%= distance_of_time_in_words @post.created_at, DateTime.now %> ago by <%=
+         user.username %>
+       </span>
+     </div>
+     <div class="commentcount">
+      <% if @post.comments.find_by(post_id: @post.id) %>
+        <% if @post.comments.count(post_id: @post.id) == 1 %>
+          <%= link_to "1 Comment", comments_path(@post) %>
+        <% else %>
+         <%= link_to "#{@post.comments.count(post_id: @post.id)} Comments", comments_path(@post)%>
+        <% end %>
+      <% else %>
+      <%= link_to "0 Comments", comments_path(@post) %>
+      <% end %>
     </div>
-  </div>
+    </li>
+  </ul>
 
-  <div class="postComments">
+  <ul class=“commentindex”>
+    <li class=“comment”>
     <% @post.comments.each do |comment| %>
-      <ul>
-        <li>
-          <div class="comment-timestamp">
-          <% user = User.find_by(id: @post.user_id) %>
-          <%= simple_format(comment.body) %>
-            <span><em>
-              Submitted <%= distance_of_time_in_words @post.created_at, DateTime.now %> ago by <%= user.username %>
-            </em></span>
-          </div>
-        </li>
-        <li>
-          <div class="comment-update">
+      <div class=“commentbody”> <%= simple_format(comment.body) %> </div>
+      <div class=“commentauthor”> 
+        <span><em>
+          Submitted <%= distance_of_time_in_words @post.created_at, DateTime.now %> ago by <%= user.username %>
+        </em></span>
+      </div>
+      <div class="comment-update">
+        <span>
           <% if current_user && current_user.comments.find_by(id: comment.id) %>
               <%= link_to "Edit Comment", comment_edit_path(comment) %>
           <% end %>
-          </div>
-        </li>
-        <li>
-          <div class="comment-delete">
+        </span>
+      </div>
+      <div class="comment-delete">
+        <span>
           <% if current_user && current_user.comments.find_by(id: comment.id) %>
               <%= link_to "Delete Comment", comment_update_path(comment), method: :delete %>
           <% end %>
-          </div>
-        </li>
-      </ul>
-    <% end %>
-  </div>
-
+        </span>
+      </div>
+      <% end %>
+    </li>
+  </ul>
 
   <div class="commentBox">
     <h3>Add Comment</h3>
