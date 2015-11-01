@@ -13,13 +13,13 @@
               "0 Comments"
               <% end %>
             </li>
-            <li class=>
-              <% if current_user.posts.find_by(id: post.id) %>
-                <%= link_to "Edit Post", edit_path(post) %>
+            <% if current_user && current_user.posts.find_by(id: post.id) %>
+                <li class=edit-post><%= link_to "Edit Post", edit_path(post) %></li>
               <% end %>
             <li class="time-submitted">
+              <% user = User.find_by(id: post.user_id) %>
               <span>
-                Submitted <%= distance_of_time_in_words post.created_at, post.updated_at %>ago by <%= current_user.username %>
+                Submitted <%= distance_of_time_in_words post.created_at, DateTime.now %> ago by <%= user.username %>
               </span>
             </li>
           </ul>
@@ -27,7 +27,9 @@
     <% end %>
 </ul>
 
+<% if current_user %>
 <div class="posts-nav">
   <%= paginate @posts %>
   <%= link_to "Add a new Post!", post_new_path %>
 </div>
+<% end %>
