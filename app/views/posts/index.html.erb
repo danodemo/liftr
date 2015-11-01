@@ -18,6 +18,7 @@
               <span>
                 Submitted <%= distance_of_time_in_words post.created_at, DateTime.now %> ago by <%= user.username %>
               </span>
+            </li>
             <% if current_user && current_user.posts.find_by(id: post.id) %>
                 <li class=edit-post><%= link_to "Edit Post", edit_path(post) %></li>
             <% end %>

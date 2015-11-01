@@ -7,8 +7,8 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:id])
-   comment = current_user.comments.create(body: params[:body])
-   redirect_to comments_path
+    @post.comments.create(body: params[:body], user_id: current_user.id)
+    redirect_to comments_path(@post)
   end
 
   def edit
