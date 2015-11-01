@@ -8,7 +8,11 @@
           <ul class="options">
             <li class="comment-count">
               <% if post.comments.find_by(post_id: post.id) %>
-                <%= link_to "#{post.comments.count(post_id: post.id)} Comments", comments_path(post) %>
+                <% if post.comments.count(post_id: post.id) == 1 %>
+                  <%= link_to "1 Comment", comments_path(post) %>
+                <% else %>
+                 <%= link_to "#{post.comments.count(post_id: post.id)} Comments", comments_path(post) %>
+                <% end %>
               <% else %>
               <%= link_to "0 Comments", comments_path(post) %>
               <% end %>

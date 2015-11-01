@@ -14,8 +14,11 @@
       <ul>
         <li>
           <div class="comment-timestamp">
-              <em>Written: <%= time_ago_in_words(comment.created_at) %> ago</em><br/>
-              <%= simple_format(comment.body) %>
+          <% user = User.find_by(id: @post.user_id) %>
+          <%= simple_format(comment.body) %>
+            <span><em>
+              Submitted <%= distance_of_time_in_words @post.created_at, DateTime.now %> ago by <%= user.username %>
+            </em></span>
           </div>
         </li>
         <li>
