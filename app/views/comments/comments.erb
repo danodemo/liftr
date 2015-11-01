@@ -11,10 +11,28 @@
 
   <div class="postComments">
     <% @post.comments.each do |comment| %>
-        <div class="comment">
-            <em>Written: <%= time_ago_in_words(comment.created_at) %> ago</em><br/>
-            <%= simple_format(comment.body) %>
-        </div>
+      <ul>
+        <li>
+          <div class="comment-timestamp">
+              <em>Written: <%= time_ago_in_words(comment.created_at) %> ago</em><br/>
+              <%= simple_format(comment.body) %>
+          </div>
+        </li>
+        <li>
+          <div class="comment-update">
+          <% if current_user && current_user.comments.find_by(id: comment.id) %>
+              <%= link_to "Edit Comment", comment_edit_path(comment) %>
+          <% end %>
+          </div>
+        </li>
+        <li>
+          <div class="comment-delete">
+          <% if current_user && current_user.comments.find_by(id: comment.id) %>
+              <%= link_to "Delete Comment", comment_update_path(comment), method: :delete %>
+          <% end %>
+          </div>
+        </li>
+      </ul>
     <% end %>
   </div>
 
