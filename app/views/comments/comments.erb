@@ -12,7 +12,6 @@
   <div class="postComments">
     <% @post.comments.each do |comment| %>
         <div class="comment">
-  <% binding.pry %>
             <em>Written: <%= time_ago_in_words(comment.created_at) %> ago</em><br/>
             <%= simple_format(comment.body) %>
         </div>
