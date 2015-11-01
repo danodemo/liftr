@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root "users#welcome"
+  root "posts#index"
 
 #POSTS CONTROLLER
   get "posts", to: "posts#index", as: "posts"

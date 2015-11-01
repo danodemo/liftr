@@ -12,8 +12,8 @@ comment = Comment.find_by(user_id: current_user.id)
 render :mycomments
 end
 
-##def myprofile
-## render :myprofile
-##end
+#def welcome
+ #render :welcome
+#end
 
 end
