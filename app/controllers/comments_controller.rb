@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
 
   def index
     @post = Post.find(params[:id])
-    @comments = Post.comments.find_by(params[:post_id])
     render :comments
   end
 

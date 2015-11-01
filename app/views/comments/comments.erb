@@ -2,7 +2,7 @@
   <div class="postInfo">
     <a href="<%= @post.link %>"><%= @post.title %></a>
     <span>
-      Submitted <%= distance_of_time_in_words post.created_at, DateTime.now %> ago by <%= user.username %>
+      Submitted <%= distance_of_time_in_words @post.created_at, DateTime.now %> ago by <%= user.username %>
     </span>
   </div>
 
