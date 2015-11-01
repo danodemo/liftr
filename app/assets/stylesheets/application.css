@@ -39,7 +39,7 @@ div.pagecontent {
 }
 
 div.pagecontent ul.posts {
-  max-width: 94%;
+  width: 94%;
   height: auto;
   list-style-type: none;
   margin-lfet: auto;
@@ -88,6 +88,22 @@ li.post {
 }
 
 .post .commentcount {
+  font-size: 125%;
+  display: inline-block;
+  float: right;
+  margin-top: 35px;
+  margin-right: 20px;
+}
+
+.post .editpost {
+  font-size: 125%;
+  display: inline-block;
+  float: right;
+  margin-top: 35px;
+  margin-right: 20px;
+}
+
+.post .deletepost {
   font-size: 125%;
   display: inline-block;
   float: right;

@@ -1,39 +1,38 @@
-<h1>Liftr</h1>
-<h2>The Back Page of the Internet</h2>
-
 <ul class="posts">
     <% @posts.each do |post| %>
         <li class="post">
-          <div class="link" id="p1"><a href="<%= post.link %>" target="_blank"><%= post.title %></a>
-          <ul class="options">
-            <li class="comment-count">
-              <% if post.comments.find_by(post_id: post.id) %>
-                <% if post.comments.count(post_id: post.id) == 1 %>
-                  <%= link_to "1 Comment", comments_path(post) %>
-                <% else %>
-                 <%= link_to "#{post.comments.count(post_id: post.id)} Comments", comments_path(post) %>
-                <% end %>
-              <% else %>
-              <%= link_to "0 Comments", comments_path(post) %>
-              <% end %>
-            </li>
-            <li class="time-submitted">
+          <div class="title"><a href="<%= post.link %>" target="_blank"><%= post.title %></a></div>
+
+          <div class="preview">"><a href "peview link"> </a></div>
+
+          <div class="userinfo">
               <% user = User.find_by(id: post.user_id) %>
               <span>
                 Submitted <%= distance_of_time_in_words post.created_at, DateTime.now %> ago by <%= user.username %>
               </span>
-            </li>
+            </div>
+          
+          <div class="commentcount">
+            <% if post.comments.find_by(post_id: post.id) %>
+              <% if post.comments.count(post_id: post.id) == 1 %>
+                <%= link_to "1 Comment", comments_path(post) %>
+              <% else %>
+               <%= link_to "#{post.comments.count(post_id: post.id)} Comments", comments_path(post) %>
+              <% end %>
+            <% else %>
+            <%= link_to "0 Comments", comments_path(post) %>
+            <% end %>
+          </div>
+        
             <% if current_user && current_user.posts.find_by(id: post.id) %>
-                <li class=edit-post><%= link_to "Edit Post", edit_path(post) %></li>
+                <div class="editpost"><%= link_to "Edit", edit_path(post) %></div>
             <% end %>
             <% if current_user && current_user.posts.find_by(id: post.id) %>
-                <li class=delete-post><%= link_to "Delete Post", post_path(post), 
+                <div class="deletepost"><%= link_to "Delete", post_path(post),
                 method: :delete %>
-                </li>
+                </div>
             <% end %>
             </li>
-          </ul>
-        </li>
     <% end %>
 </ul>
 
