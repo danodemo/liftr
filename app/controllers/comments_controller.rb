@@ -19,6 +19,8 @@ class CommentsController < ApplicationController
   def update
     comment = Comment.find(params[:id])
     comment.update(body: params[:body])
+    post = Post.find_by(id: comment.post_id)
+    redirect_to comments_path(post)
   end
 
   ##def show
@@ -26,14 +28,15 @@ class CommentsController < ApplicationController
   ##end
 
   def destroy
-      comment = Comment.find(params[:id])
+    comment = Comment.find(params[:id])
     if current_user.id == comment.user_id
       flash[:notice] = "The comment has been deleted."
       comment.destroy
     else
       flash[:notice] = "Sorry, you can't delete that, you ass."
     end
-    redirect_to comments_show_path
+    post  = Post.find_by(id: comment.post_id)
+    redirect_to comments_path(post)
   end
 
 end
