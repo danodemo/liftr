@@ -1,16 +1,32 @@
+<div class="postView">
+  <div class="postInfo">
+    <a href="<%= @post.link %>"><%= @post.title %></a>
+    <span>
+      Submitted <%= distance_of_time_in_words post.created_at, DateTime.now %> ago by <%= user.username %>
+    </span>
+  </div>
 
-
-
-
-<div class="CommentBox">
-  <h3>Add Comment</h3>
-
-    <%= form_tag(comments_path(@post)) do %>
-  
-      <div class="comment_body"> 
-        <%=label_tag "Body: " %>
-        <%= text_field_tag :body %>
-      </div>
-        <%= submit_tag "Add Comment" %>
+  <div class="postComments">
+    <% @post.comments.each do |comment| %>
+        <div class="comment">
+            <em>Written: <%= time_ago_in_words(comment.created_at) %> ago</em><br/>
+            <%= simple_format(comment.content) %>
+        </div>
     <% end %>
+  </div>
+
+
+  <div class="commentBox">
+    <h3>Add Comment</h3>
+
+      <%= form_tag(comments_path(@post)) do %>
+    
+        <div class="comment_body"> 
+          <%=label_tag "Body: " %>
+          <%= text_field_tag :body %>
+        </div>
+          <%= submit_tag "Add Comment" %>
+      <% end %>
+  </div>
+
 </div>
