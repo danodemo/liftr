@@ -4,7 +4,7 @@
 <ul class="posts">
     <% @posts.each do |post| %>
         <li class="post">
-          <div class="link" id="p1"><a href="<%= post.link %>"><%= post.title %></a>
+          <div class="link" id="p1"><a href="<%= post.link %>" target="_blank"><%= post.title %></a>
           <ul class="options">
             <li class="comment-count">
               <% if post.comments.find_by(post_id: post.id) %>
