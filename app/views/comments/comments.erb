@@ -1,16 +1,20 @@
 <div class="postView">
   <div class="postInfo">
     <a href="<%= @post.link %>"><%= @post.title %></a>
-    <span>
-      Submitted <%= distance_of_time_in_words @post.created_at, DateTime.now %> ago by <%= user.username %>
-    </span>
+    <div class="userblock">
+      <% user = User.find_by(id: @post.user_id) %>
+        <span>
+          Submitted <%= distance_of_time_in_words @post.created_at, DateTime.now %> ago by <%= user.username %>
+        </span>
+    </div>
   </div>
 
   <div class="postComments">
     <% @post.comments.each do |comment| %>
         <div class="comment">
+  <% binding.pry %>
             <em>Written: <%= time_ago_in_words(comment.created_at) %> ago</em><br/>
-            <%= simple_format(comment.content) %>
+            <%= simple_format(comment.body) %>
         </div>
     <% end %>
   </div>
