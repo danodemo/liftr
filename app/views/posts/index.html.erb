@@ -3,7 +3,10 @@
         <li class="post">
           <div class="title"><a href="<%= post.link %>" target="_blank"><%= post.title %></a></div>
 
-          <div class="preview">"><a href "peview link"> </a></div>
+          <div class="preview">
+          <% image = LinkThumbnailer.generate(post.link) %>
+            <a href="<%= post.link %>"><img src="<%= image.images.first %>"/></a>
+          </div>
 
           <div class="userinfo">
               <% user = User.find_by(id: post.user_id) %>

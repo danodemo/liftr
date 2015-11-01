@@ -80,6 +80,11 @@ li.post {
   display: inline-block;
 }
 
+.post .preview img {
+  height: 100%;
+  width: 100%;
+}
+
 .post .userinfo {
   font-size: 125%;
  display: inline-block;
