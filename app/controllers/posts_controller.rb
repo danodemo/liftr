@@ -21,8 +21,8 @@ class PostsController < ApplicationController
   def update
     post = Post.find(params[:id])
     post.update(title: params[:title],
-                 link: params[:content])
-    redirect_to post_path(post)
+                 link: params[:link])
+    redirect_to posts_path
   end
 
   def index
