@@ -5,36 +5,36 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <link href="http://codegena.com/assets/css/image-preview-for-link.css" rel="stylesheet">     
-  <script type="text/javascript">
-    $(function() {
-                $('#p1 a').miniPreview({ prefetch: 'pageload' });
-                $('#p2 a').miniPreview({ prefetch: 'parenthover' });
-                $('#p3 a').miniPreview({ prefetch: 'none' });
-            });
-  </script> <script src="http://codegena.com/assets/js/image-preview-for-link.js"></script>
 </head>
 <body>
+
+  <div class="headbanner">
+  <h1> Welcome to Liftr </h1>
+  <h2>The Internet's greatest links, ready for lifting!</h2>
+  <% if current_user %>
+  <h3> You are currently logged in as: <%= current_user.username %>!  </h3>
+  <% else %>
+  <h3> You are not currently logged in. </h3>
+  <% end %>
+  </div>
+
     <nav>
-      <div class="reg">
-        <% if flash[:notice] %>
-            <h2><div class="notice"><%= flash[:notice] %></div></h2>
+      <% if current_user %>
+      <ul class="navmenu">
+        <li><%= link_to "Home", posts_path %></li>
+        <li><%= link_to "Signout", login_path, method: "delete" %></li>
+      </ul>
+      <% else %>
+      <ul class="navmenu">
+        <li><%= link_to "Home", posts_path %></li>
+        <li><%= link_to "Login", login_path %></li>
+        <li><%= link_to "Sign Up", signup_path %></li>
         <% end %>
-        <% if current_user %>
-            <h3>Welcome to Liftr, <%= current_user.email %>!</h3>
-            <%= link_to "Logout", login_path, method: "delete" %>
-        <% else %>
-            <%= link_to "Login", login_path %>
-            <%= link_to "Sign Up", signup_path %>
-        <% end %>
-      </div>
-      <div class="homebutton">
-        <%= link_to "Home", posts_path %>
-      </div>
     </nav>
 
+<div class="pagecontent">
 <%= yield %>
+</div>
 
 </body>
 </html>
