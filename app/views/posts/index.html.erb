@@ -4,23 +4,28 @@
 <ul class="posts">
     <% @posts.each do |post| %>
         <li class="post">
-          <a href="<%= post.link %>"><%= post.title %></a>
+          <div class="link" id="p1"><a href="<%= post.link %>"><%= post.title %></a>
           <ul class="options">
             <li class="comment-count">
               <% if post.comments.find_by(post_id: post.id) %>
-                <%= link_to "#{post.comments.find_by(post_id: post.id).count} Comments", comments_show_path %>
+                <%= link_to "#{post.comments.find_by(post_id: post.id).count} Comments", comments_path(post) %>
               <% else %>
-              "0 Comments"
+              <%= link_to "0 Comments", comments_path(post) %>
               <% end %>
             </li>
-            <% if current_user && current_user.posts.find_by(id: post.id) %>
-                <li class=edit-post><%= link_to "Edit Post", edit_path(post) %></li>
-              <% end %>
             <li class="time-submitted">
               <% user = User.find_by(id: post.user_id) %>
               <span>
                 Submitted <%= distance_of_time_in_words post.created_at, DateTime.now %> ago by <%= user.username %>
               </span>
+            <% if current_user && current_user.posts.find_by(id: post.id) %>
+                <li class=edit-post><%= link_to "Edit Post", edit_path(post) %></li>
+            <% end %>
+            <% if current_user && current_user.posts.find_by(id: post.id) %>
+                <li class=delete-post><%= link_to "Delete Post", post_path(post), 
+                method: :delete %>
+                </li>
+            <% end %>
             </li>
           </ul>
         </li>
