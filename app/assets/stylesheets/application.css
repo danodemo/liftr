@@ -132,7 +132,7 @@ div.pagecontent {
   border: 6px outset darkgrey;
   width: 95%;
   height: auto;
-  background: linear-gradient(black, darkgrey);
+  background-color: black;
 }
 
 div.pagecontent ul.posts {
@@ -148,7 +148,7 @@ li.post {
   font-family: "Verdana";
   height: 110px;
   width: 90%;
-  border: 1px solid black;
+  border: 5px inset lightgrey;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
@@ -220,11 +220,37 @@ li.post {
   margin-right: 20px;
 }
 
+.animated:hover { 
+    -webkit-animation-duration: 1s; 
+    animation-duration: 1s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+    -webkit-animation-timing-function: linear; 
+    animation-timing-function: linear; 
+    animation-iteration-count:infinite; 
+    -webkit-animation-iteration-count:infinite; 
+} 
+
+@-webkit-keyframes pulse { 
+    0% { -webkit-transform: scale(1); } 
+    50% { -webkit-transform: scale(1.1); } 
+    100% { -webkit-transform: scale(1); } 
+} 
+@keyframes pulse { 
+    0% { transform: scale(1); } 
+    50% { transform: scale(1.1); } 
+    100% { transform: scale(1); } 
+} 
+.pulse { 
+    -webkit-animation-name: pulse; 
+    animation-name: pulse; 
+}
+
 .button {
   display: inline-block;
   padding: 10px;
   border: none;
-  font: normal 36px/normal "Unica One";
+  font: normal 36px/normal "Geostar";
 }
 
 .button a {
@@ -232,4 +258,32 @@ li.post {
   text-decoration: none;
   text-align: center;
   text-shadow: 2px 2px darkgrey;
+}
+
+div.user-field {
+  font-family: 'Baumans';
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+
+.user-field input {
+  margin-bottom: 10px;
+}
+
+div.login-field {
+  font-family: 'Baumans';
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+
+.login-field input {
+  margin-bottom: 10px;
+}
+
+.loginbutton input{
+  margin-left: 50%;
+  margin-right: auto;
+  margin-bottom: 50px;
 }
