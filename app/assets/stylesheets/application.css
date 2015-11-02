@@ -1,9 +1,24 @@
 html {
-  background: linear-gradient(grey, white);
+  background-image: url("https://media.giphy.com/media/gU25raLP4pUu4/giphy.gif");
 }
 
 body {
-  font-family: helvetica;
+  margin: 0;
+}
+
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?family=Share+Tech+Mono);
+
+svg{
+  width: 400px;
+  height: 80px;
+  display: block;
+  position: relative;
+  overflow: hidden; 
+  margin: 0 auto;
+  padding-left: 100px;
+  padding-top: 10px;
 }
 
 div.posts-nav-t {
@@ -33,12 +48,24 @@ div.posts-nav-b a {
 
 div.headbanner {
   text-align: center;
-  border-bottom: 1px solid black;
+  background-color: black;
 }
 
 nav {
-  border-bottom: 1px solid black;
-  background-color: lightblue;
+  border-bottom: 6px ridge darkgrey;
+  background-color: black;
+}
+
+h2 {
+  font-family: 'Baumans';
+  color: white;
+}
+
+h3 {
+  color: white;
+  margin-bottom: 0;
+  padding-bottom: 20px;
+  font-family: 'Baumans';
 }
 
 ul.navmenu {
@@ -46,24 +73,66 @@ ul.navmenu {
   margin-bottom: 0;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-right: 40px;
   list-style-type: none;
   text-align: center;
 }
 
 ul.navmenu li {
   display: inline-block;
-  border: 1px solid black;
-  margin: 0 20px 0 20px;
-}
+   padding: 5.5px 11px;
+   border: 1px solid #000000;
+   background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#030303));
+   background: -webkit-linear-gradient(top, #FFFFFF, #030303);
+   background: -moz-linear-gradient(top, #FFFFFF, #030303);
+   background: -ms-linear-gradient(top, #FFFFFF, #030303);
+   background: -o-linear-gradient(top, #FFFFFF, #030303);
+   background-color: #030303;
+   box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 7px #FFFFFF;
+   -webkit-box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 7px #FFFFFF;
+   -moz-box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 7px #FFFFFF;
+   -webkit-border-radius: 16px;
+   -moz-border-radius: 16px;
+   border-radius: 16px;
+   text-shadow: #000000 1px 1px 0px;
+   color: #FFFFFF;
+   font-size: 14px;
+   font-family: Helvetica;
+   text-decoration: none;
+   font-weight: bold;
+   -webkit-transition: 0.2s;
+   -moz-transition: 0.2s;
+   -o-transition: 0.2s;
+   cursor: pointer;
+   }
+ul.navmenu li:hover {
+   background: none;
+   background-color: #030303;
+   box-shadow: 0px 0px 5px 0px #AAAAAA;
+   -webkit-box-shadow: 0px 0px 5px 0px #AAAAAA;
+   -moz-box-shadow: 0px 0px 5px 0px #AAAAAA;
+   border: 1px solid #ffffff;
+   color: #001EFF;
+   }
+ul.navmenu li:active {
+   top: 1px;
+   position: relative;
+   }
+
+   ul.navmenu li a {
+    text-decoration: none;
+    color: inherit;
+   }
 
 div.pagecontent {
-  margin-top: 5px;
+  margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  margin-bottom: 25px;
+  border: 6px outset darkgrey;
   width: 95%;
   height: auto;
-  background: linear-gradient(lightgrey, grey);
+  background-color: black;
 }
 
 div.pagecontent ul.posts {
@@ -76,27 +145,33 @@ div.pagecontent ul.posts {
 }
 
 li.post {
-  font-family: helvetica;
+  font-family: "Verdana";
   height: 110px;
   width: 90%;
-  border: 1px solid black;
+  border: 5px inset lightgrey;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   display: block;
-  background-color: lightgrey;
+  background: linear-gradient(white, grey);
 }
 
 .post .title {
   margin-top: 10px;
   margin-left: 10px;
   font-size: 200%;
-  text-decoration: underline;
+  font-weight: bold;
   display: inline-block;
   width: 75%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.post .title a {
+  color: black;
+  text-shadow: 2px 2px 4px grey;
+  text-decoration: none;
 }
 
 .post .preview {
@@ -117,7 +192,7 @@ li.post {
 .post .userinfo {
   font-size: 125%;
  display: inline-block;
- margin-top: 35px;
+ margin-top: 25px;
  margin-left: 8px;
 }
 
@@ -125,7 +200,7 @@ li.post {
   font-size: 125%;
   display: inline-block;
   float: right;
-  margin-top: 35px;
+  margin-top: 25px;
   margin-right: 20px;
 }
 
@@ -133,7 +208,7 @@ li.post {
   font-size: 125%;
   display: inline-block;
   float: right;
-  margin-top: 35px;
+  margin-top: 25px;
   margin-right: 20px;
 }
 
@@ -141,6 +216,74 @@ li.post {
   font-size: 125%;
   display: inline-block;
   float: right;
-  margin-top: 35px;
+  margin-top: 25px;
   margin-right: 20px;
+}
+
+.animated:hover { 
+    -webkit-animation-duration: 1s; 
+    animation-duration: 1s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+    -webkit-animation-timing-function: linear; 
+    animation-timing-function: linear; 
+    animation-iteration-count:infinite; 
+    -webkit-animation-iteration-count:infinite; 
+} 
+
+@-webkit-keyframes pulse { 
+    0% { -webkit-transform: scale(1); } 
+    50% { -webkit-transform: scale(1.1); } 
+    100% { -webkit-transform: scale(1); } 
+} 
+@keyframes pulse { 
+    0% { transform: scale(1); } 
+    50% { transform: scale(1.1); } 
+    100% { transform: scale(1); } 
+} 
+.pulse { 
+    -webkit-animation-name: pulse; 
+    animation-name: pulse; 
+}
+
+.button {
+  display: inline-block;
+  padding: 10px;
+  border: none;
+  font: normal 36px/normal "Geostar";
+}
+
+.button a {
+  color: rgba(255,255,255,1);
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 2px 2px darkgrey;
+}
+
+div.user-field {
+  font-family: 'Baumans';
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+
+.user-field input {
+  margin-bottom: 10px;
+}
+
+div.login-field {
+  font-family: 'Baumans';
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+
+.login-field input {
+  margin-bottom: 10px;
+}
+
+.loginbutton input{
+  margin-left: 50%;
+  margin-right: auto;
+  margin-bottom: 50px;
 }

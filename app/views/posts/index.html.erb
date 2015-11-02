@@ -1,8 +1,10 @@
 <div class="posts-nav-t">
   <span><%= paginate @posts %></span>
   <% if current_user %>
-  <%= link_to "Add a new Post!", post_new_path %>
-  <% end %>
+<div id="animated-example" class="animated pulse">
+  <div class="button"><%= link_to "Add a new Post", post_new_path %></div>
+</div>
+<% end %>
 </div>
 
 
@@ -48,8 +50,10 @@
 </ul>
 
 <div class="posts-nav-b">
-  <%= paginate @posts %>
+  <span><%= paginate @posts %></span>
   <% if current_user %>
-  <span class="addpost-bot"><%= link_to "Add a new Post!", post_new_path %>
-  <% end %></span>
+  <div id="animated-example" class="animated pulse">
+  <div class="button"><%= link_to "Add a new Post", post_new_path %></div>
+</div>
+<% end %>
 </div>

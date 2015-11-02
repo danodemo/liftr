@@ -1,4 +1,4 @@
-<h1>Create New User</h1>
+<h2>Create New User</h2>
 
 <%= form_tag(signup_path) do %>
     <% if @user.errors.any? %>
@@ -28,7 +28,11 @@
         <%= password_field_tag :password %>
     </div>
 
+    <div class="loginbutton">
     <%= submit_tag "Sign Up" %>
+    </div>
 <% end %>
 
+<div class="button">
 <%= link_to "Back to Posts", posts_path %>
+</div>
