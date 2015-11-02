@@ -56,6 +56,7 @@
   </ul>
 
   <div class="commentBox">
+  <% if current_user %>
     <h3>Add Comment</h3>
 
       <%= form_tag(comments_path(@post)) do %>
@@ -65,6 +66,9 @@
           <%= text_field_tag :body %>
         </div>
           <%= submit_tag "Add Comment" %>
+      <% end %>
+      <% else %>
+      <h3> <%= link_to "Signup", signup_path %> or <%= link_to "Login", login_path %> to post a comment. </h3>
       <% end %>
   </div>
 
