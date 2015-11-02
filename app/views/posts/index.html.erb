@@ -1,7 +1,7 @@
-<div class="posts-nav">
+<div class="posts-nav-t">
   <span><%= paginate @posts %></span>
   <% if current_user %>
-  <span class="addpost"><%= link_to "Add a new Post!", post_new_path %></span>
+  <%= link_to "Add a new Post!", post_new_path %>
   <% end %>
 </div>
 
@@ -47,9 +47,9 @@
     <% end %>
 </ul>
 
-<div class="posts-nav">
+<div class="posts-nav-b">
   <%= paginate @posts %>
   <% if current_user %>
-  <%= link_to "Add a new Post!", post_new_path %>
-  <% end %>
+  <span class="addpost-bot"><%= link_to "Add a new Post!", post_new_path %>
+  <% end %></span>
 </div>
