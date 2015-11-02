@@ -1,6 +1,13 @@
+html {
+  background: linear-gradient(grey, white);
+}
+
 body {
   font-family: helvetica;
-  background-color: lightgrey;
+}
+
+div.posts-nav {
+  text-align:center;
 }
 
 div.headbanner {
@@ -35,7 +42,7 @@ div.pagecontent {
   border: 1px solid black;
   width: 95%;
   height: auto;
-  background-color: grey;
+  background: linear-gradient(lightgrey, grey);
 }
 
 div.pagecontent ul.posts {

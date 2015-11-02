@@ -1,3 +1,11 @@
+<div class="posts-nav">
+  <span><%= paginate @posts %></span>
+  <% if current_user %>
+  <span class="addpost"><%= link_to "Add a new Post!", post_new_path %></span>
+  <% end %>
+</div>
+
+
 <ul class="posts">
     <% @posts.each do |post| %>
         <li class="post">
@@ -39,9 +47,9 @@
     <% end %>
 </ul>
 
-<% if current_user %>
 <div class="posts-nav">
   <%= paginate @posts %>
+  <% if current_user %>
   <%= link_to "Add a new Post!", post_new_path %>
+  <% end %>
 </div>
-<% end %>
