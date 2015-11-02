@@ -1,9 +1,19 @@
 html {
-  background: linear-gradient(grey, white);
+  background: linear-gradient(black, darkgrey);
 }
 
-body {
-  font-family: helvetica;
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?family=Share+Tech+Mono);
+
+svg{
+  width: 400px;
+  height: 80px;
+  display: block;
+  position: relative;
+  overflow: hidden; 
+  margin: 0 auto;
+  padding-left: 100px;
 }
 
 div.posts-nav-t {
