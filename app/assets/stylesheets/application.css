@@ -1,5 +1,5 @@
 html {
-  background-image: url("http://www.qotile.net/blog/images/static2.gif");
+  background-image: url("https://media.giphy.com/media/gU25raLP4pUu4/giphy.gif");
 }
 
 body {
@@ -125,14 +125,14 @@ ul.navmenu li:active {
    }
 
 div.pagecontent {
-  margin-top: 5px;
+  margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
   border: 6px outset darkgrey;
   width: 95%;
   height: auto;
-  background: linear-gradient(lightgrey, grey);
+  background: linear-gradient(black, darkgrey);
 }
 
 div.pagecontent ul.posts {
@@ -145,7 +145,7 @@ div.pagecontent ul.posts {
 }
 
 li.post {
-  font-family: helvetica;
+  font-family: "Verdana";
   height: 110px;
   width: 90%;
   border: 1px solid black;
@@ -153,19 +153,25 @@ li.post {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  background-color: lightgrey;
+  background: linear-gradient(white, grey);
 }
 
 .post .title {
   margin-top: 10px;
   margin-left: 10px;
   font-size: 200%;
-  text-decoration: underline;
+  font-weight: bold;
   display: inline-block;
   width: 75%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.post .title a {
+  color: black;
+  text-shadow: 2px 2px 4px grey;
+  text-decoration: none;
 }
 
 .post .preview {
@@ -186,7 +192,7 @@ li.post {
 .post .userinfo {
   font-size: 125%;
  display: inline-block;
- margin-top: 35px;
+ margin-top: 25px;
  margin-left: 8px;
 }
 
@@ -194,7 +200,7 @@ li.post {
   font-size: 125%;
   display: inline-block;
   float: right;
-  margin-top: 35px;
+  margin-top: 25px;
   margin-right: 20px;
 }
 
@@ -202,7 +208,7 @@ li.post {
   font-size: 125%;
   display: inline-block;
   float: right;
-  margin-top: 35px;
+  margin-top: 25px;
   margin-right: 20px;
 }
 
@@ -210,6 +216,20 @@ li.post {
   font-size: 125%;
   display: inline-block;
   float: right;
-  margin-top: 35px;
+  margin-top: 25px;
   margin-right: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px;
+  border: none;
+  font: normal 36px/normal "Unica One";
+}
+
+.button a {
+  color: rgba(255,255,255,1);
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 2px 2px darkgrey;
 }
