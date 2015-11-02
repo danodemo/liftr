@@ -6,7 +6,7 @@ body {
   margin: 0;
 }
 
-@import "compass/css3";
+/*@import "compass/css3"; rejected by heroku */
 
 @import url(http://fonts.googleapis.com/css?family=Share+Tech+Mono);
 
