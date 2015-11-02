@@ -6,8 +6,29 @@ body {
   font-family: helvetica;
 }
 
-div.posts-nav {
+div.posts-nav-t {
+  font-family: 'Comfortaa';
+  font-size: 140%;
+  text-shadow: 2px 2px 1px black;
   text-align:center;
+  padding-top: 5px;
+  border: 2px ;
+}
+
+div.posts-nav-b {
+  font-family: 'Comfortaa';
+  font-size: 140%;
+  text-shadow: 2px 2px 1px black;
+  text-align:center;
+  margin-bottom: 5px;
+}
+
+div.posts-nav-t a {
+  color: white;
+}
+
+div.posts-nav-b a {
+  color: white;
 }
 
 div.headbanner {
@@ -55,6 +76,7 @@ div.pagecontent ul.posts {
 }
 
 li.post {
+  font-family: helvetica;
   height: 110px;
   width: 90%;
   border: 1px solid black;
