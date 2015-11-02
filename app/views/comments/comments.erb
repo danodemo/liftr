@@ -1,36 +1,41 @@
 <div class="postView">
   <ul>
     <li class="post">
-     <div class="title"><a href="<%= @post.link %>" target="_blank"><%= @post.title %></a></div>
-        <% image = LinkThumbnailer.generate(@post.link) %>
-        
-     <div class="preview">
+     
+      <div class="title"><a href="<%= @post.link %>" target="_blank"><%= @post.title %></a>
+      </div>
+  <% image = LinkThumbnailer.generate(@post.link) %>
+      <div class="preview">
         <a href="<%= @post.link %>"><img src="<%= image.images.first %>"/></a>
-     </div>
-     <div class="userinfo">
-       <% user = User.find_by(id: @post.user_id) %>
+      </div>
+      
+      <div class="userinfo">
+      <% user = User.find_by(id: @post.user_id) %>
        <span>
          Submitted <%= distance_of_time_in_words @post.created_at, DateTime.now %> ago by <%=
          user.username %>
        </span>
-     </div>
-     <div class="commentcount">
-      <% if @post.comments.find_by(post_id: @post.id) %>
-        <% if @post.comments.count(post_id: @post.id) == 1 %>
-          <%= link_to "1 Comment", comments_path(@post) %>
+      </div>
+     
+      <div class="commentcount">
+        <% if @post.comments.find_by(post_id: @post.id) %>
+          <% if @post.comments.count(post_id: @post.id) == 1 %>
+            <%= link_to "1 Comment", comments_path(@post) %>
+          <% else %>
+           <%= link_to "#{@post.comments.count(post_id: @post.id)} Comments", comments_path(@post)%>
+          <% end %>
         <% else %>
-         <%= link_to "#{@post.comments.count(post_id: @post.id)} Comments", comments_path(@post)%>
+        <%= link_to "0 Comments", comments_path(@post) %>
         <% end %>
-      <% else %>
-      <%= link_to "0 Comments", comments_path(@post) %>
-      <% end %>
-    </div>
+      </div>
     </li>
   </ul>
+</div>
 
-  <ul class=“commentindex”>
-    <li class=“comment”>
+<div class="fullcommentindex">
+  <ul>
     <% @post.comments.each do |comment| %>
+    <li class=“comment”>
       <div class=“commentbody”> <%= simple_format(comment.body) %> </div>
       <div class=“commentauthor”> 
         <span><em>
@@ -51,9 +56,10 @@
           <% end %>
         </span>
       </div>
+      </li>
       <% end %>
-    </li>
   </ul>
+</div>
 
   <div class="commentBox">
   <% if current_user %>

@@ -124,6 +124,7 @@ ul.navmenu li:active {
     color: inherit;
    }
 
+/*  Main Post Index Styling   */
 div.pagecontent {
   margin-top: 15px;
   margin-left: auto;
@@ -220,7 +221,8 @@ li.post {
   margin-right: 20px;
 }
 
-.animated:hover { 
+/* "Add a Post" Button   */
+.animated:hover {
     -webkit-animation-duration: 1s; 
     animation-duration: 1s; 
     -webkit-animation-fill-mode: both; 
@@ -260,6 +262,7 @@ li.post {
   text-shadow: 2px 2px darkgrey;
 }
 
+/* Registration and Session Controller Stylings  */
 div.user-field {
   font-family: 'Baumans';
   font-size: 14px;
@@ -286,4 +289,14 @@ div.login-field {
   margin-left: 50%;
   margin-right: auto;
   margin-bottom: 50px;
+}
+
+/* Comments Controller Styling */
+
+div.fullcommentindex {
+  border: 3px solid white;
+}
+
+p {
+  color: white;
 }
