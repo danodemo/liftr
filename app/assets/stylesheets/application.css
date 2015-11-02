@@ -1,5 +1,9 @@
 html {
-  background: linear-gradient(black, darkgrey);
+  background-image: url("http://www.qotile.net/blog/images/static2.gif");
+}
+
+body {
+  margin: 0;
 }
 
 @import "compass/css3";
@@ -14,6 +18,7 @@ svg{
   overflow: hidden; 
   margin: 0 auto;
   padding-left: 100px;
+  padding-top: 10px;
 }
 
 div.posts-nav-t {
@@ -43,12 +48,24 @@ div.posts-nav-b a {
 
 div.headbanner {
   text-align: center;
-  border-bottom: 1px solid black;
+  background-color: black;
 }
 
 nav {
-  border-bottom: 1px solid black;
-  background-color: lightblue;
+  border-bottom: 6px ridge darkgrey;
+  background-color: black;
+}
+
+h2 {
+  font-family: 'Baumans';
+  color: white;
+}
+
+h3 {
+  color: white;
+  margin-bottom: 0;
+  padding-bottom: 20px;
+  font-family: 'Baumans';
 }
 
 ul.navmenu {
@@ -56,21 +73,63 @@ ul.navmenu {
   margin-bottom: 0;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-right: 40px;
   list-style-type: none;
   text-align: center;
 }
 
 ul.navmenu li {
   display: inline-block;
-  border: 1px solid black;
-  margin: 0 20px 0 20px;
-}
+   padding: 5.5px 11px;
+   border: 1px solid #000000;
+   background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#030303));
+   background: -webkit-linear-gradient(top, #FFFFFF, #030303);
+   background: -moz-linear-gradient(top, #FFFFFF, #030303);
+   background: -ms-linear-gradient(top, #FFFFFF, #030303);
+   background: -o-linear-gradient(top, #FFFFFF, #030303);
+   background-color: #030303;
+   box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 7px #FFFFFF;
+   -webkit-box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 7px #FFFFFF;
+   -moz-box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 7px #FFFFFF;
+   -webkit-border-radius: 16px;
+   -moz-border-radius: 16px;
+   border-radius: 16px;
+   text-shadow: #000000 1px 1px 0px;
+   color: #FFFFFF;
+   font-size: 14px;
+   font-family: Helvetica;
+   text-decoration: none;
+   font-weight: bold;
+   -webkit-transition: 0.2s;
+   -moz-transition: 0.2s;
+   -o-transition: 0.2s;
+   cursor: pointer;
+   }
+ul.navmenu li:hover {
+   background: none;
+   background-color: #030303;
+   box-shadow: 0px 0px 5px 0px #AAAAAA;
+   -webkit-box-shadow: 0px 0px 5px 0px #AAAAAA;
+   -moz-box-shadow: 0px 0px 5px 0px #AAAAAA;
+   border: 1px solid #ffffff;
+   color: #001EFF;
+   }
+ul.navmenu li:active {
+   top: 1px;
+   position: relative;
+   }
+
+   ul.navmenu li a {
+    text-decoration: none;
+    color: inherit;
+   }
 
 div.pagecontent {
   margin-top: 5px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  margin-bottom: 5px;
+  border: 6px outset darkgrey;
   width: 95%;
   height: auto;
   background: linear-gradient(lightgrey, grey);
