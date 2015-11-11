@@ -15,4 +15,5 @@ class UserTest < ActiveSupport::TestCase
     assert user.save
     assert user.errors.empty?
   end
+
 end
