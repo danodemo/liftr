@@ -3,9 +3,9 @@
 one:
   username: danodemo
   email: danimal@test.up
-  password: password1
+  password_digest: password1
 
 two:
   username: BillNye
   email: the@science.guy
-  password: BillBillBillBill
+  password_digest: BillBillBillBill

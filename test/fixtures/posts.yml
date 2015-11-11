@@ -5,9 +5,11 @@ one:
   link: www.reddit.com
   created_at: 2015-10-29 15:59:46
   updated_at: 2015-10-29 15:59:46
+  user_id: 1
 
 two:
   title: Beep
   link: www.invalidaddress.florp
   created_at: 2015-10-29 15:59:46
   updated_at: 2015-10-29 15:59:46
+  user_id: 3
