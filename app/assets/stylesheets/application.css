@@ -330,5 +330,26 @@ label {
 
 p {
   margin-left: 10px;
+  margin-right: 10px;
   font-family: "Comfortaa";
-} 
+  word-wrap: break-word;
+  padding: 5px;
+}
+
+em {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+div.comment-update {
+  float: right;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+div.comment-delete {
+  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
