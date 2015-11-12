@@ -285,18 +285,51 @@ div.login-field {
   margin-bottom: 10px;
 }
 
-.loginbutton input{
+.loginbutton input {
   margin-left: 50%;
   margin-right: auto;
   margin-bottom: 50px;
 }
 
+div.post-title { 
+  color: white;
+}
+
 /* Comments Controller Styling */
 
-div.fullcommentindex {
-  border: 3px solid white;
+.commentBox {
+  display: inline-block;
+  width: 400px;
+  margin-left: 38%;
+  margin-bottom: 25px;
+  text-align: center;
+  border: 3px outset grey;
+  back
+}
+
+.commentBoxcontent {
+  padding-bottom: 18px;
+}
+
+.commentBox h3 {
+  padding: 0;
+}
+
+div.fullcommentindex li {
+  font-family: "Comfortaa";
+  border: 3px inset grey;
+  background-color: lightgrey;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label {
+  font-family: "Comfortaa";
+  color: white;
 }
 
 p {
-  color: white;
-}
+  margin-left: 10px;
+  font-family: "Comfortaa";
+} 

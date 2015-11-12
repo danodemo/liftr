@@ -6,7 +6,8 @@ class RegistrationsControllerTest < ActionController::TestCase
     get :new
     assert_response :success
     assert_not_nil assigns(:user) #assigns lets you get an instance variable
-    assert_equal assigns(:user).class, User
+    assert_equal assigns(:user).is_a?(User)
+    assert_template :new
   end
 
 end
