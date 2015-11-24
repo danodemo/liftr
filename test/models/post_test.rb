@@ -10,8 +10,13 @@ class PostTest < ActiveSupport::TestCase
    # user2 = users(:two)
    # post1 = posts(:boop)
    # post2 = posts(:beep)
-  test "user associations are correct" do
-   user = users(:one)
-   assert user.posts.count > 0
- end
+  #test "user associations are correct" do
+   # user = users(:one)
+    #assert user.posts.count > 0
+  #end
+
+ # test "post has a link" do
+    
+  #end
+
 end

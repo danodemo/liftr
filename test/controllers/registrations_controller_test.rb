@@ -10,4 +10,9 @@ class RegistrationsControllerTest < ActionController::TestCase
     assert_template :new
   end
 
+  test 'cannot duplicate email' do
+    user1 = users(:one)
+    user2 = User.new(username: "kittykitty", email: "danimal@test.up", password_digest: "meeowmeow")
+    refute user2.save
+    assert user.errors[:email].duplicate?
 end
