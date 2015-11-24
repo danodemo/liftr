@@ -133,7 +133,29 @@ div.pagecontent {
   border: 6px outset darkgrey;
   width: 95%;
   height: auto;
-  background-color: black;
+  background-color: #1F2F37;
+}
+
+div.pagecontent h1 {
+  font-family: "Futura";
+  color: white;
+  margin-left: 42%;
+  margin-right: auto;
+  display: inline-block;
+}
+
+div.pagecontent form {
+  text-align: center;
+  font-size: 14px;
+}
+div.pagecontent a {
+  color: #96C9FF;
+  font-family: "Comfortaa";
+  font-size: 14px;
+  margin-left: 47%;
+  padding-top: 20px;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
 div.pagecontent ul.posts {
@@ -321,6 +343,7 @@ div.fullcommentindex li {
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  list-style-type: none;
 }
 
 label {
