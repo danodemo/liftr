@@ -6,6 +6,16 @@ def index
   render :userindex
 end
 
+def makeadmin
+  user = User.find(id: params[:user_id])
+  user.update_attribute(:admin, true)
+end
+
+def removeadmin
+  user = User.find(id: params[:user_id])
+  user.update_attribute(:admin, false)
+end
+  
 def myposts
 @post = Post.find(user_id: current_user.id)
 render :myposts
