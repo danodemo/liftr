@@ -11,7 +11,7 @@
 
   def authenticate_user!
     unless current_user
-      flash[:notice] = "You have to be logged in to do that, dude brah."
+      flash[:notice] = "You have to be logged in to do that, dude brah man bro."
       redirect_to login_path
     end
   end
